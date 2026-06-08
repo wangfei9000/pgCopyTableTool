@@ -1,0 +1,5 @@
+.cache/
+pg-table-copy-fyne
+*.app/
+*.exe
+*.log
