@@ -34,6 +34,22 @@ go install fyne.io/fyne/v2/cmd/fyne@latest
 fyne package
 ```
 
+# 打包win，先安装
+brew install mingw-w64
+
+# win下的gcc
+/usr/local/bin/x86_64-w64-mingw32-gcc
+
+# 执行打包
+```bash
+CGO_ENABLED=1 \
+GOOS=windows \
+GOARCH=amd64 \
+CC=x86_64-w64-mingw32-gcc \
+CXX=x86_64-w64-mingw32-g++ \
+/Users/edy/go/bin/fyne package --target windows -icon ./Icon.png
+```
+
 跨平台打包请参考 Fyne 官方文档，不同系统需要对应的图形库/交叉编译环境。
 
 ## 复制规则
